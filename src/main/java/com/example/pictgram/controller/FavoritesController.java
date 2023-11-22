@@ -25,6 +25,7 @@ import com.example.pictgram.entity.Topic;
 import com.example.pictgram.entity.UserInf;
 import com.example.pictgram.form.TopicForm;
 import com.example.pictgram.repository.FavoriteRepository;
+import org.springframework.http.ResponseEntity;
 
 @Controller
 public class FavoritesController {
@@ -50,6 +51,8 @@ public class FavoritesController {
             list.add(form);
         }
         model.addAttribute("list", list);
+        
+        model.addAttribute("hasFooter", true);
 
         return "topics/index";
     }
